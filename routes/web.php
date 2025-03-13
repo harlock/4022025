@@ -14,3 +14,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get("cesar",function(){
     return view('cesar');
 });
+
+Route::get("emi",function(){
+    return view('emi');
+});
