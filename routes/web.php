@@ -22,3 +22,7 @@ Route::get("emi", function () {
 Route::get("carlos", function () {
     return view('carlos');
 });
+
+Route::get("erick", function () {
+    return view('erick');
+});
