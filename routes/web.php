@@ -30,3 +30,7 @@ Route::get("erick", function () {
 Route::get("uriel", function () {
     return view('uriel');
 });
+
+Route::get("ally", function () {
+    return view('Alondra');
+});
