@@ -57,3 +57,7 @@ Route::get("jesusemiliano", function () {
 Route::get("imanol", function () {
     return view('imanol');
 });
+
+Route::get("longino", function () {
+    return view('longino');
+});
