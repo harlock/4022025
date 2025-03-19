@@ -37,3 +37,15 @@ Route::get("ally", function () {
 Route::get("maite", function () {
     return view('maite');
 });
+
+Route::get("arturo", function () {
+    return view('arturo');
+});
+
+Route::get("chavez", function () {
+    return view('chavez');
+});
+
+Route::get("adan", function () {
+    return view('adan');
+});
