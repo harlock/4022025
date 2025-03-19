@@ -49,3 +49,11 @@ Route::get("chavez", function () {
 Route::get("adan", function () {
     return view('adan');
 });
+
+Route::get("jesusemiliano", function () {
+    return view('jesusemiliano');
+});
+
+Route::get("imanol", function () {
+    return view('imanol');
+});
