@@ -57,3 +57,19 @@ Route::get("jesusemiliano", function () {
 Route::get("imanol", function () {
     return view('imanol');
 });
+
+Route::get("ivonne", function () {
+    return view('ivonne');
+});
+
+Route::get("diegocruz", function () {
+    return view('diegocruz');
+});
+
+Route::get("luisroberto", function () {
+    return view('luisroberto');
+});
+
+Route::get("alexis", function () {
+    return view('alexis');
+});
