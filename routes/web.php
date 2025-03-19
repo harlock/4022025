@@ -83,3 +83,7 @@ Route::get("roman", function () {
 Route::get("adrian", function () {
     return view('Adrian');
 });
+
+Route::get("fatima", function () {
+    return view('fatima');
+});
