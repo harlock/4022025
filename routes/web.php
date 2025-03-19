@@ -87,3 +87,15 @@ Route::get("adrian", function () {
 Route::get("fatima", function () {
     return view('fatima');
 });
+
+Route::get("gael", function () {
+    return view('gael');
+});
+
+Route::get("darina", function () {
+    return view('darina');
+});
+
+Route::get("emmanuel", function () {
+    return view('emmanuel');
+});
