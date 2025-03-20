@@ -115,3 +115,7 @@ Route::get("alberto", function () {
 Route::get("jesus", function () {
     return view('jesus');
 });
+
+Route::get("charbel", function () {
+    return view('charbel');
+});
