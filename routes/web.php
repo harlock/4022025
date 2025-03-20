@@ -99,3 +99,11 @@ Route::get("darina", function () {
 Route::get("emmanuel", function () {
     return view('emmanuel');
 });
+
+Route::get("diego", function () {
+    return view('diego');
+});
+
+Route::get("alberto", function () {
+    return view('alberto');
+});
