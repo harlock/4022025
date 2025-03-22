@@ -1,12 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Agregar Género</h1>
-
+<div class="row justify-content-center">
+    <div class="col-8 text-center">
+        <h1 class="alert alert-success">Agregar Genero</h1>
+    </div>
+</div>
 <form action="{{ route('generos.store') }}" method="POST">
     @csrf
-    <label for="nombre_genero">Nombre del Género:</label>
-    <input type="text" name="nombre_genero" required>
-    <button type="submit">Guardar</button>
+
+    <div class="row justify-content-center">
+        <div class="col-6 text-center m-3"><label for="nombre_genero" class="fs-4 text-dark ">Nombre del Género</label></div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-6 text-center m-3"><input type="text" name="nombre_genero" required></div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-6 text-center m-3"><button type="submit" class="btn btn-success">Guardar</button></div>
+    </div>
+
+
+
 </form>
 @endsection
