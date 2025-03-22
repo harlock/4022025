@@ -16,9 +16,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('ciudad', App\Http\Controllers\CiudadController::class);
 
-
-Route::resource('genero', App\Http\Controllers\GeneroController::class);
-
+Route::resource('generos', App\Http\Controllers\GeneroController::class);
 
 
 Route::get("cesar", function () {

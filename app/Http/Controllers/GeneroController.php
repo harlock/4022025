@@ -48,7 +48,7 @@ class GeneroController extends Controller
         // Restablecer el auto-incremento
         \DB::statement('ALTER TABLE generos AUTO_INCREMENT = 1');
 
-        return redirect()->route('generos.index')->with('success', 'Género eliminado y auto-incremento restablecido.');
+        return redirect()->route('generos.index')->with('success', 'Ciudad borrada correctamente.');
     }
 
     // Modificar
