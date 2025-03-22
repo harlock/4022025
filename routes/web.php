@@ -12,18 +12,16 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/generos', [GeneroController::class, 'index'])->name('generos.index');
-Route::get('/generos/create', [GeneroController::class, 'create'])->name('generos.create');
-Route::post('/generos', [GeneroController::class, 'store'])->name('generos.store');
-Route::delete('/generos/{id_genero}', [GeneroController::class, 'destroy'])->name('generos.destroy');
-Route::get('/generos/{id_genero}/edit', [GeneroController::class, 'edit'])->name('generos.edit');
-Route::put('/generos/{id_genero}', [GeneroController::class, 'update'])->name('generos.update');
+
 
 Route::resource('ciudad', App\Http\Controllers\CiudadController::class);
 
-use App\Http\Controllers\DiaController;
 
-Route::resource('dias', DiaController::class); // Rutas para las operaciones CRUD
+
+Route::resource('dias', App\Http\Controllers\DiaController::class);
+
+Route::resource('generos', App\Http\Controllers\GeneroController::class);
+
 
 
 Route::get("cesar", function () {

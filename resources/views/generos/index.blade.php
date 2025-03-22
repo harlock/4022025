@@ -25,15 +25,16 @@
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <th scope="col">Id_Genero</th>
-                    <th scope="col">Genero</th>
+                    <th scope="col" class="bg-success-subtle ">Id_Genero</th>
+                    <th scope="col" class="bg-success-subtle ">Genero</th>
+                    <th scope="col" class="bg-success-subtle text-center">Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($generos as $genero)
                 <tr>
-                    <td scope="row">{{$loop->index+1}}</td>
-                    <td>{{ $genero->nombre_genero }}</td>
+                    <td class="" scope="row">{{$loop->index+1}}</t>
+                    <td class="">{{ $genero->nombre_genero }}</td>
                     <td class="text-center">
                         <a class="btn btn-warning me-2" href="{{ route('generos.edit', $genero->id_genero) }}">Editar</a>
                         <form action="{{ route('generos.destroy', $genero->id_genero) }}" method="POST" style="display:inline;">
