@@ -34,3 +34,7 @@ Route::get("uriel", function () {
 Route::get("ally", function () {
     return view('Alondra');
 });
+
+Route::get("arturo", function () {
+    return view('arturo');
+});
