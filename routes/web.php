@@ -12,14 +12,12 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/generos', [GeneroController::class, 'index'])->name('generos.index');
-Route::get('/generos/create', [GeneroController::class, 'create'])->name('generos.create');
-Route::post('/generos', [GeneroController::class, 'store'])->name('generos.store');
-Route::delete('/generos/{id_genero}', [GeneroController::class, 'destroy'])->name('generos.destroy');
-Route::get('/generos/{id_genero}/edit', [GeneroController::class, 'edit'])->name('generos.edit');
-Route::put('/generos/{id_genero}', [GeneroController::class, 'update'])->name('generos.update');
+
 
 Route::resource('ciudad', App\Http\Controllers\CiudadController::class);
+
+
+Route::resource('genero', App\Http\Controllers\GeneroController::class);
 
 
 
