@@ -21,6 +21,9 @@ Route::put('/generos/{id_genero}', [GeneroController::class, 'update'])->name('g
 
 Route::resource('ciudad', App\Http\Controllers\CiudadController::class);
 
+use App\Http\Controllers\DiaController;
+
+Route::resource('dias', DiaController::class); // Rutas para las operaciones CRUD
 
 
 Route::get("cesar", function () {
