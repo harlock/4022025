@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('generos', function (Blueprint $table) {
             $table->id('id_genero'); // Clave primaria autoincremental
             $table->string('nombre_genero', 100); // Nombre del género
+            $table->softDeletes();
+            $table->timestamps();
         });
     }
 

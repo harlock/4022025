@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Ciudad extends Model
 {
-    //
-    use softDeletes;
+    use SoftDeletes;
 
     protected $table = 'ciudades';
     protected $primaryKey = 'id_ciudad';
+    public $timestamps = false;
     protected $fillable = ["nombre_ci"];
 }

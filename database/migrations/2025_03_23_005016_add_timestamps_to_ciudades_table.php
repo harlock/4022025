@@ -11,8 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('ciudades', function (Blueprint $table) {
-            //
+        Schema::create('ciudades', function (Blueprint $table) {
+            $table->id('id_ciudad');
+            $table->string('nombre_ci', 100);
+            $table->softDeletes();
+            $table->timestamps();
         });
     }
 
@@ -21,8 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('ciudades', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('generos');
     }
 };
