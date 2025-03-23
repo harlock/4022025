@@ -4,12 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Dia extends Model
 {
-    use HasFactory;
+    use SoftDeletes;
 
-// La tabla asociada
+    // La tabla asociada
     protected $table = 'dias';
 
     // La clave primaria personalizada (en este caso 'id_dia')
@@ -17,7 +18,4 @@ class Dia extends Model
 
     // Los campos que pueden ser asignados masivamente
     protected $fillable = ['desc_dia'];
-
-    // Desactivar los timestamps si no los estás utilizando
-    public $timestamps = false;
 }
