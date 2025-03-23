@@ -22,6 +22,9 @@ Route::resource('dias', App\Http\Controllers\DiaController::class);
 
 Route::resource('generos', App\Http\Controllers\GeneroController::class);
 
+Route::resource('clasificacion', App\Http\Controllers\ClasificacionController::class);
+
+
 
 
 Route::get("cesar", function () {
