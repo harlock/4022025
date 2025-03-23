@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CiudadController;
 use App\Http\Controllers\GeneroController;
+use App\Http\Controllers\IdiomaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -22,7 +23,7 @@ Route::resource('dias', App\Http\Controllers\DiaController::class);
 
 Route::resource('generos', App\Http\Controllers\GeneroController::class);
 
-
+Route::resource('idioma', App\Http\Controllers\IdiomaController::class);
 
 Route::get("cesar", function () {
     return view('cesar');
@@ -128,3 +129,4 @@ Route::get("jesus", function () {
 Route::get("charbel", function () {
     return view('charbel');
 });
+
