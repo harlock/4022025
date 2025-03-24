@@ -69,7 +69,7 @@
                             <a class="nav-link" href="{{ route('idioma.index') }}">{{ __('Clasificacion') }}</a>
                         </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('horas.index') }}">{{ __('Horarios') }}</a>
+                                <a class="nav-link" href="{{ route('horas.index') }}">{{ __('horas') }}</a>
                             </li>
                         
                         
