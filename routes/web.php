@@ -27,6 +27,9 @@ Route::resource('idioma', App\Http\Controllers\IdiomaController::class);
 
 Route::resource('clasificacion', App\Http\Controllers\ClasificacionController::class);
 
+Route::resource('horas', App\Http\Controllers\HoraController::class);
+
+
 Route::get("cesar", function () {
     return view('cesar');
 });
