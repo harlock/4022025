@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CiudadController;
+use App\Http\Controllers\GeneroController;
+use App\Http\Controllers\IdiomaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -11,9 +13,21 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
+
 Route::resource('ciudad', App\Http\Controllers\CiudadController::class);
 
 
+Route::resource('dias', App\Http\Controllers\DiaController::class);
+
+Route::resource('generos', App\Http\Controllers\GeneroController::class);
+
+Route::resource('idioma', App\Http\Controllers\IdiomaController::class);
+
+Route::resource('clasificacion', App\Http\Controllers\ClasificacionController::class);
+
+Route::resource('horas', App\Http\Controllers\HoraController::class);
+Route::resource('personas', App\Http\Controllers\PersonasController::class);
 
 Route::get("cesar", function () {
     return view('cesar');
@@ -119,3 +133,4 @@ Route::get("jesus", function () {
 Route::get("charbel", function () {
     return view('charbel');
 });
+
