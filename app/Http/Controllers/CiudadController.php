@@ -52,7 +52,8 @@ class CiudadController extends Controller
      */
     public function edit(Ciudad $ciudad)
     {
-        //
+        return view("ciudades.edit",compact('ciudad'));
+
     }
 
     /**
@@ -60,7 +61,11 @@ class CiudadController extends Controller
      */
     public function update(Request $request, Ciudad $ciudad)
     {
-        //
+        //return $request->all();
+        $ciudad->update($request->all());
+
+        return redirect()->route('ciudad.index')->with('success', 'Ciudad editada correctamente.');
+
     }
 
     /**
