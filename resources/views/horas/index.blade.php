@@ -6,7 +6,7 @@
             <h1 class="alert alert-success">Horarios</h1>
         </div>
     </div>
-    <div class="row justify-content-center">
+    <div class="row justify-content-around">
         <div class="col-8">
             <a href="{{route('horas.create')}}" class="btn btn-success">Agregar Horario</a>
         </div>
