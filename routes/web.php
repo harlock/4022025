@@ -27,6 +27,10 @@ Route::resource('idioma', App\Http\Controllers\IdiomaController::class);
 
 Route::resource('clasificacion', App\Http\Controllers\ClasificacionController::class);
 
+Route::resource('personas', App\Http\Controllers\PersonasController::class);
+
+
+
 Route::get("cesar", function () {
     return view('cesar');
 });
