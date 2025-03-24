@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CiudadController;
 use App\Http\Controllers\GeneroController;
+use App\Http\Controllers\IdiomaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,6 +18,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('ciudad', App\Http\Controllers\CiudadController::class);
 
 Route::resource('generos', App\Http\Controllers\GeneroController::class);
+
+Route::resource('idioma', App\Http\Controllers\IdiomaController::class);
 
 
 Route::get("cesar", function () {
@@ -42,12 +45,7 @@ Route::get("uriel", function () {
 Route::get("ally", function () {
     return view('Alondra');
 });
-<<<<<<< HEAD
 
-Route::get("arturo", function () {
-    return view('arturo');
-});
-=======
 Route::get("maite", function () {
     return view('maite');
 });
@@ -129,4 +127,4 @@ Route::get("jesus", function () {
 Route::get("charbel", function () {
     return view('charbel');
 });
->>>>>>> 4d2631401d790df084625120e617bdfccc03bb79
+

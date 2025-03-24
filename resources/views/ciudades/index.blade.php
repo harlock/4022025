@@ -45,7 +45,6 @@
                         </form>
                     </td>
                 </tr>
-                
             @endforeach
         </tbody>
     </table>
