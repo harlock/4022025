@@ -18,7 +18,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('ciudad', App\Http\Controllers\CiudadController::class);
 
 
-Route::resource('horas', App\Http\Controllers\HoraController::class);
 Route::resource('dias', App\Http\Controllers\DiaController::class);
 
 Route::resource('generos', App\Http\Controllers\GeneroController::class);

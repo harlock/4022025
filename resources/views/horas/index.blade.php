@@ -8,7 +8,7 @@
     </div>
     <div class="row justify-content-center">
         <div class="col-8">
-            <a href="{{route('horas.create')}}" class="btn btn-success">Agregar ciudad</a>
+            <a href="{{route('horas.create')}}" class="btn btn-success">Agregar Horario</a>
         </div>
     </div>
     @if(session('success'))
@@ -35,8 +35,8 @@
                         <th scope="row">{{$loop->index+1}}</th>
                         <td>{{ $hora->descripcion_h }}</td>
                         <td>
-                            <a class="btn btn-warning" href="{{ route('horas.edit', $hora->descripcion_h) }}">Editar</a>
-                            <form action="{{ route('horas.destroy', $hora->descripcion_h) }}" method="POST" style="display:inline;">
+                            <a class="btn btn-warning" href="{{ route('horas.edit', $hora->id_horas) }}">Editar</a>
+                            <form action="{{ route('horas.destroy', $hora->id_horas) }}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger" type="submit">Eliminar</button>
