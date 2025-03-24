@@ -23,6 +23,8 @@
                 <tr>
                     <th>#</th>
                     <th>Nombre de la persona</th>
+                    <th>Apellido paterno</th>
+                    <th>Apellido materno</th>
                     <th>Acciones</th>
                 </tr>
                 </thead>
@@ -31,6 +33,9 @@
                     <tr>
                         <td>{{$loop->index+1}}</td>
                         <td>{{ $persona->Nombre }}</td>
+                        <td>{{ $persona->ap }}</td>
+                        <td>{{ $persona->am }}</td>
+                        
                         <td>
                             <a class="btn btn-warning" href="{{ route('personas.edit', $persona->id_personas) }}">Editar</a>
                             <form action="{{ route('personas.destroy', $persona->id_personas) }}" method="POST" style="display:inline;">
