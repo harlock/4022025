@@ -29,6 +29,11 @@ class IdiomaController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'desc_idioma' => 'required|max:8',
+        ],[],[
+            'desc_idioma' => 'descripcion de idioma',
+        ]);
         Idioma::create($request->all());
         return redirect()->route('idioma.index')->with('success', 'Idioma agregado correctamente.');
     }
