@@ -24,8 +24,8 @@ class ClasificacionController extends Controller
     // Guarda una nueva clasificación en la base de datos
     public function store(Request $request)
     {
-        $request->validate([
-            'nom_clasifi' => 'required|string|max:100',
+        $request->validate([   
+            'nom_clasifi' => 'required|string|max:200',
         ]);
     
         // Crear un nuevo registro de clasificación
@@ -52,7 +52,7 @@ class ClasificacionController extends Controller
     {
         $clasificacion = Clasificacion::findOrFail($id_clasificacion);  // Buscar el género por su ID
         return view('clasificacion.edit', compact('clasificacion'));  // Pasa los datos a la vista
-    }
+    } 
 
     public function update(Request $request, $id_clasificacion)
     {
