@@ -64,11 +64,9 @@ class HoraController extends Controller
      */
     public function update(Request $request, Hora $hora)
     {
-        $request->validate([
-            'nombre_genero' => 'required|string|max:100'
-        ]);
+       $hora->update($request->all());
+       return redirect()->route('horas.index')->with('success', 'horario actualizado correctamente');
 
-        return redirect()->route('horas.index')->with('success', 'Horario actualizado correctamente');
     }
 
     /**

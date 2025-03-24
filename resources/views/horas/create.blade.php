@@ -2,24 +2,23 @@
 
 @section('content')
     <div class="row justify-content-center">
-        <div class="col-8 text-center">
-            <h1 class="alert alert-success">Agregar Horario</h1>
+        <div class="col-8">
+            <h1 class="alert alert-success">Agregar hroas</h1>
+            <a href="{{route('horas.index')}}" class="btn btn-primary">Regresar</a>
         </div>
     </div>
-    <form action="{{ route('horas.store') }}" method="POST">
-        @csrf
 
-        <div class="row justify-content-center">
-            <div class="col-6 text-center m-3"><label for="descripcion_h" class="fs-4 text-dark ">Horas:</label></div>
+    <div class="row justify-content-center mt-5">
+        <div class="col-6">
+            <form action="{{ route('horas.store') }}" method="POST">
+                @csrf
+                <div class="mb-3">
+                    <label for="descripcion_h" class="form-label">Descripción de horas</label>
+                    <input type="text" class="form-control" id="descripcion_h" name="descripcion_h" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </form>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-6 text-center m-3"><input type="text" name="descripcion_h" required></div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-6 text-center m-3"><button type="submit" class="btn btn-success">Guardar</button></div>
-        </div>
-
-
-
-    </form>
+    </div>
 @endsection
