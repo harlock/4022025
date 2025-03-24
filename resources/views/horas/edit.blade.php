@@ -3,26 +3,26 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="col-8 text-center">
-            <h1 class="alert alert-success">Editar Genero</h1>
+            <h1 class="alert alert-success">Editar Horas</h1>
         </div>
     </div>
-    <form action="{{ route('generos.update', $generos->id_genero) }}" method="POST">
+    <form action="{{ route('horas.update', $hora->descripcion_h) }}" method="POST">
         @csrf
         @method('PUT')
 
         <div class="row justify-content-center">
             <div class="col-8 text-center m-3">
-                <label for="nombre_genero" class="fs-4 text-dark">Nombre del Género</label>
+                <label for="nombre_genero" class="fs-4 text-dark">Horario:</label>
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="col-8 text-center m-3">
-                <input type="text" id="nombre_genero" name="nombre_genero" value="{{ old('nombre_genero', $generos->nombre_genero) }}" required class="text-center">
+                <input type="text" id="descripcion_h" name="descripcion_h" value="{{ old('descripcion_h', $hora->descripcion_h) }}" required class="text-center">
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="col-8 text-center m-3">
-                <button type="submit" class="btn btn-success">Actualizar Género</button>
+                <button type="submit" class="btn btn-success">Actualizar horario</button>
             </div>
         </div>
 

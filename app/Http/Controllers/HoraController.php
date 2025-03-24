@@ -29,17 +29,8 @@ class HoraController extends Controller
      */
     public function store(Request $request)
     {
-        // Validación de datos
-        $request->validate([
-            'descripcion_h' => 'required|string|max:100'
-        ]);
-
-        // Creación del horario
-        Hora::create([
-            'descripcion_h' => $request->descripcion_h
-        ]);
-
-        return redirect()->route('horas.index')->with('success', 'horario creado correctamente');
+        Hora::create($request->all());
+        return redirect()->route('horas.index')->with('success', 'Persona agregada correctamente');
     }
 
     /**
@@ -64,11 +55,8 @@ class HoraController extends Controller
      */
     public function update(Request $request, Hora $hora)
     {
-        $request->validate([
-            'nombre_genero' => 'required|string|max:100'
-        ]);
-
-        return redirect()->route('horas.index')->with('success', 'Horario actualizado correctamente');
+        $hora->update($request->all());
+        return redirect()->route('horas.index')->with('success', 'Horario actualizada correctamente');
     }
 
     /**
