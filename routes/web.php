@@ -17,10 +17,15 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('ciudad', App\Http\Controllers\CiudadController::class);
 
+
+
+Route::resource('dias', App\Http\Controllers\DiaController::class);
+
 Route::resource('generos', App\Http\Controllers\GeneroController::class);
 
 Route::resource('idioma', App\Http\Controllers\IdiomaController::class);
 
+Route::resource('clasificacion', App\Http\Controllers\ClasificacionController::class);
 
 Route::get("cesar", function () {
     return view('cesar');
@@ -45,7 +50,6 @@ Route::get("uriel", function () {
 Route::get("ally", function () {
     return view('Alondra');
 });
-
 Route::get("maite", function () {
     return view('maite');
 });

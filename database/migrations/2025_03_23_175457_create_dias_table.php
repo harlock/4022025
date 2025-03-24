@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('generos', function (Blueprint $table) {
-            $table->id('id_genero'); // Clave primaria autoincremental
-            $table->string('nombre_genero', 100); // Nombre del género
+        Schema::create('dias', function (Blueprint $table) {
+            $table->id('id_dia');
+            $table->string('desc_dia', 100);
             $table->softDeletes();
             $table->timestamps();
         });
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('generos');
+        Schema::dropIfExists('dias');
     }
 };

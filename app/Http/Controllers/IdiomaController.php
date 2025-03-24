@@ -30,7 +30,6 @@ class IdiomaController extends Controller
     public function store(Request $request)
     {
         Idioma::create($request->all());
-
         return redirect()->route('idioma.index')->with('success', 'Idioma agregado correctamente.');
     }
 
@@ -39,7 +38,7 @@ class IdiomaController extends Controller
      */
     public function show(Idioma $idioma)
     {
-        //
+        
     }
 
     /**
@@ -56,7 +55,6 @@ class IdiomaController extends Controller
     public function update(Request $request, Idioma $idioma)
     {
         $idioma->update($request->all());
-
         return redirect()->route('idioma.index')->with('success', 'Idioma actualizado correctamente.');
     }
 
