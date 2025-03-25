@@ -16,9 +16,16 @@ class Dia extends Model
     // La clave primaria personalizada (en este caso 'id_dia')
     protected $primaryKey = 'id_dia';
 
+    
+
+
     // Los campos que pueden ser asignados masivamente
     protected $fillable = ['desc_dia'];
 
     public $timestamps = false;
 
+
+
+
+    
 }
