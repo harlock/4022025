@@ -8,8 +8,9 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('clasificacion', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_clasificacion');
             $table->string('nom_clasifi'); // Define la columna correctamente
+            $table->softDeletes();
             $table->timestamps();
         });
     }
