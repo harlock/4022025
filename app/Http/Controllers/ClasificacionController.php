@@ -25,7 +25,9 @@ class ClasificacionController extends Controller
     public function store(Request $request)
     {
         $request->validate([   
-            'nom_clasifi' => 'required|string|max:200',
+            'nom_clasifi' => 'required|string|max:10',
+        ],[],[
+            'mon_clasifi' => 'Nombre de la clasificacion',
         ]);
     
         // Crear un nuevo registro de clasificación
@@ -58,6 +60,9 @@ class ClasificacionController extends Controller
     {
         $request->validate([
             'nom_clasifi' => 'required|string|max:100',
+        ],[],[
+            'nom_clasifi' => 'Nombre de la clasificacion',
+
         ]);
     
         // Buscar la clasificación por ID
