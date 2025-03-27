@@ -46,6 +46,7 @@ class PersonasController extends Controller
      */
     public function edit(personas $persona)
     {
+
         return view('personas.edit', compact('persona'));
     }
 

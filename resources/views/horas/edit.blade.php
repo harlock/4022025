@@ -7,7 +7,19 @@
             <a href="{{route('horas.index')}}" class="btn btn-primary">Regresar</a>
         </div>
     </div>
-
+    @if ($errors->any())
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        </div>
+    @endif
     <div class="row justify-content-center mt-5">
         <div class="col-6">
             <form action="{{ route('horas.update', $hora->id_horas) }}" method="POST">
@@ -15,7 +27,7 @@
                 @method('PUT')
                 <div class="mb-3">
                     <label for="descripcion_h" class="form-label">Descripción de horas</label>
-                    <input type="text" class="form-control" id="descripcion_h" name="descripcion_h" value="{{ $hora->descripcion_h }}" required>
+                    <input type="text" class="form-control" id="descripcion_h" name="descripcion_h" value="{{ $hora->descripcion_h }}" >
                 </div>
 
                 <button type="submit" class="btn btn-primary">Actualizar</button>

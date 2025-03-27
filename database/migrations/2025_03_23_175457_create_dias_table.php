@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('dias', function (Blueprint $table) {
             $table->id('id_dia');
             $table->string('desc_dia', 100);
-            $table->softDeletes();
-            $table->timestamps();
+            $table->softDeletes();  // Esto agrega la columna 'deleted_at'
+            $table->timestamps();   // Esto agrega las columnas 'created_at' y 'updated_at'
         });
     }
 

@@ -279,4 +279,9 @@ return [
         'work'                     => 'trabajo',
         'year'                     => 'año',
     ],
+    'attributes' => [
+    'nom_clasifi' => 'Nombre de la clasificación',
+],
+    
 ];
+

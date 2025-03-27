@@ -11,8 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('clasificacion', function (Blueprint $table) {
-            //
+        Schema::table('horas', function (Blueprint $table) {
+            $table->id('id_horas');
+            $table->string('descripcion_h', 200);
+            $table->softDeletes();
+            $table->timestamps();
         });
     }
 
@@ -21,7 +24,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('clasificacion', function (Blueprint $table) {
+        Schema::table('horas', function (Blueprint $table) {
             //
         });
     }

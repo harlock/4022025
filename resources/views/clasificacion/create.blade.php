@@ -5,7 +5,25 @@
     <div class="col-8 text-center">
         <h1 class="alert alert-success">Agregar Clasificación</h1>
     </div>
+    <div class="row justify-content-center">
+            <div class="col-8">
+                <a href="{{route('clasificacion.index')}}" class="btn btn-primary">Regresar</a>
+            </div>
+        </div>
 </div>
+@if ($errors->any())
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        </div>
+    @endif
 
 <!-- Formulario para crear una nueva clasificación -->
 <form action="{{ route('clasificacion.store') }}" method="POST">

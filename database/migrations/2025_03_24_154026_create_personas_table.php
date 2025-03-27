@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::table('personas', function (Blueprint $table) {
             $table->id('id_personas');
-            $table->string('Nombre')->unique();
-            $table->string('ap')->unique();
-            $table->string('am')->unique();
+            $table->string('Nombre', 200);
+            $table->string('ap', 200);
+            $table->string('am', 200);
             $table->softDeletes();
             $table->timestamps();
         });
