@@ -34,7 +34,7 @@ class HoraController extends Controller
             'descripcion_h' => 'required|string|max:100'
         ]);
 
-        // Creación del género
+        // Creación del horario
         Hora::create([
             'descripcion_h' => $request->descripcion_h
         ]);
@@ -55,7 +55,7 @@ class HoraController extends Controller
      */
     public function edit(Hora $hora)
     {
-        $hora = hora::findOrFail($id_horas);  // Buscar el género por su ID
+
         return view('horas.edit', compact('hora'));
     }
 
@@ -64,15 +64,9 @@ class HoraController extends Controller
      */
     public function update(Request $request, Hora $hora)
     {
-        $request->validate([
-            'nombre_genero' => 'required|string|max:100'
-        ]);
+       $hora->update($request->all());
+       return redirect()->route('horas.index')->with('success', 'horario actualizado correctamente');
 
-        $hora = Hora::findOrFail($id_horas);  // Buscar el horario por ID
-        $hora->descripcion_h = $request->descripcion_h;
-        $hora->save();  // Guardar los cambios
-
-        return redirect()->route('horas.index')->with('success', 'Horario actualizado correctamente');
     }
 
     /**
@@ -80,12 +74,8 @@ class HoraController extends Controller
      */
     public function destroy(Hora $hora)
     {
-        $hora = hora::findOrFail($id_horas);
+
         $hora->delete();
-
-        // Restablecer el auto-incremento
-        \DB::statement('ALTER TABLE horas AUTO_INCREMENT = 1');
-
         return redirect()->route('horas.index')->with('success', 'Horario borrado correctamente.');
     }
 }

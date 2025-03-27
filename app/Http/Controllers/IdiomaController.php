@@ -29,6 +29,11 @@ class IdiomaController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'desc_idioma' => 'required|max:8',
+        ],[],[
+            'desc_idioma' => 'descripcion de idioma',
+        ]);
         Idioma::create($request->all());
         return redirect()->route('idioma.index')->with('success', 'Idioma agregado correctamente.');
     }
@@ -38,7 +43,7 @@ class IdiomaController extends Controller
      */
     public function show(Idioma $idioma)
     {
-        
+
     }
 
     /**
@@ -54,6 +59,11 @@ class IdiomaController extends Controller
      */
     public function update(Request $request, Idioma $idioma)
     {
+        $request->validate([
+            'desc_idioma' => 'required|max:8',
+        ],[],[
+            'desc_idioma' => 'descripcion de idioma',
+        ]);
         $idioma->update($request->all());
         return redirect()->route('idioma.index')->with('success', 'Idioma actualizado correctamente.');
     }

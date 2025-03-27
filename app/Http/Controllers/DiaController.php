@@ -43,7 +43,7 @@ class DiaController extends Controller
         $validated = $request->validate([
             'desc_dia' => 'required|string|max:200|unique:dias,desc_dia,' . $id_dia . ',id_dia',  // Asegúrate de usar 'id_dia' aquí
         ]);
-
+                                        ///aqui se pide que no pase de los 200 y que a la vez sea unico y que no se repita pero en este caso se actualiza la info en el caso de que se vaya a editar
 
         $dia = Dia::find($id_dia);
 

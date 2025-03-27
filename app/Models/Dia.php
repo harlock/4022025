@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -18,4 +18,7 @@ class Dia extends Model
 
     // Los campos que pueden ser asignados masivamente
     protected $fillable = ['desc_dia'];
+
+    public $timestamps = false;
+
 }
