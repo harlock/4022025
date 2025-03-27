@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('Nombre', 10); // Columna Nombre con longitud máxima de 10 caracteres
             $table->string('ap', 10); // Columna apellido paterno con longitud máxima de 10 caracteres
             $table->string('am', 10); // Columna apellido materno con longitud máxima de 10 caracteres
-            $table->softDeletes(); 
+            $table->softDeletes();
             $table->timestamps();
         });
     }
