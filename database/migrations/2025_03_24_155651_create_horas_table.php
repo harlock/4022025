@@ -12,10 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('personas', function (Blueprint $table) {
-            $table->id('id_personas'); // Columna de ID
-            $table->string('Nombre', 200); // Columna Nombre
-            $table->string('ap', 200); // Columna apellido paterno
-            $table->string('am', 200); // Columna apellido materno
+            $table->id('id_horas'); // Columna de ID
+            $table->string('descripcion_h', 200); // Columna Nombre
             $table->softDeletes(); // Elimina suavemente
             $table->timestamps(); // Tiempos de creación y actualización
         });
