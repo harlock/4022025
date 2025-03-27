@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
         });
     }
-git add database/migrations/2025_03_24_155651_create_horas_table.php
+
     /**
      * Reverse the migrations.
      */
