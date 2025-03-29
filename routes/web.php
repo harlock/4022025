@@ -30,6 +30,8 @@ Route::resource('horas', App\Http\Controllers\HoraController::class);
 
 Route::resource('personas', App\Http\Controllers\PersonasController::class);
 
+Route::resource('proyecciones', App\Http\Controllers\ProyeccionController::class);
+
 Route::get("cesar", function () {
     return view('cesar');
 });
