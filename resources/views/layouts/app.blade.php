@@ -63,7 +63,7 @@
                         </li>
                          
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('idioma.index') }}">{{ __('Idioma') }}</a>
+                            <a class="nav-link" href="{{ route('idioma.index') }}">{{ __('idioma') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('clasificacion.index') }}">{{ __('Clasificacion') }}</a>
