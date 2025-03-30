@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('personas', function (Blueprint $table) {
-            $table->id('id_personas');
-            $table->string('Nombre', 200);
-            $table->string('ap', 200);
-            $table->string('am', 200);
+        Schema::create('personas', function (Blueprint $table) {
+            $table->id('id_personas'); // Columna id_personas como clave primaria
+            $table->string('Nombre', 10); // Columna Nombre con longitud máxima de 10 caracteres
+            $table->string('ap', 10); // Columna apellido paterno con longitud máxima de 10 caracteres
+            $table->string('am', 10); // Columna apellido materno con longitud máxima de 10 caracteres
             $table->softDeletes();
             $table->timestamps();
         });
@@ -26,7 +26,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-            Schema::dropIfExists('idioma');
+        Schema::dropIfExists('personas'); // Elimina la tabla personas
 
     }
 };

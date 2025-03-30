@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('horas', function (Blueprint $table) {
-            $table->id('id_horas');
-            $table->string('descripcion_h', 200);
-            $table->softDeletes();
-            $table->timestamps();
+        Schema::create('horas', function (Blueprint $table) {
+            $table->id('id_horas'); // Columna de ID
+            $table->string('descripcion_h', 200); // Columna Nombre
+            $table->softDeletes(); // Elimina suavemente
+            $table->timestamps(); // Tiempos de creación y actualización
         });
     }
+
 
     /**
      * Reverse the migrations.

@@ -10,6 +10,15 @@
 
     <div class="row justify-content-center mt-5">
         <div class="col-6">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <form action="{{ route('personas.update', $persona->id_personas) }}" method="POST">
                 @csrf
                 @method('PUT')

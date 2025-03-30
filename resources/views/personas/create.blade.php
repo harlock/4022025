@@ -7,7 +7,15 @@
             <a href="{{route('personas.index')}}" class="btn btn-primary">Regresar</a>
         </div>
     </div>
-
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <div class="row justify-content-center mt-5">
         <div class="col-6">
             <form action="{{ route('personas.store') }}" method="POST">

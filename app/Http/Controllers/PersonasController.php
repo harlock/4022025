@@ -29,6 +29,15 @@ class PersonasController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'Nombre' => 'required|max:10',
+            'ap' => 'required|max:10',
+            'am' => 'required|max:10',
+            ],[],[
+                'Nombre' => 'nombre',
+            'ap' => 'apellido paterno',
+            'am' => 'apellido materno',
+        ]);
         personas::create($request->all());
         return redirect()->route('personas.index')->with('success', 'Persona agregada correctamente');
     }
@@ -55,6 +64,15 @@ class PersonasController extends Controller
      */
     public function update(Request $request, personas $persona)
     {
+        $request->validate([
+            'Nombre' => 'required|max:10',
+            'ap' => 'required|max:10',
+            'am' => 'required|max:10',
+           ],[],[
+               'Nombre' => 'nombre',
+            'ap' => 'apellido paterno',
+            'am' => 'apellido materno',
+        ]);
         $persona->update($request->all());
         return redirect()->route('personas.index')->with('success', 'Persona actualizada correctamente');
     }
