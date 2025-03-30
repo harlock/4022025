@@ -3,7 +3,7 @@
 @section("content")
     
 <div class="row justify-content-center">
-    <div class="col-8 justify-content-center">
+    <div class="col-8 justify-content-center text-center">
         <h1 class="alert alert-success">Idiomas</h1>
         <a href="{{route('idioma.create')}}" class="btn btn-success">Agregar Idioma</a>
     </div>
