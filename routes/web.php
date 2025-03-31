@@ -137,7 +137,10 @@ Route::get("charbel", function () {
     return view('charbel');
 });
 
-Route::get("dashPeliculas", function () {
+/*Route::get("dashPeliculas", function () {
    return view('peliculasViews/dashPeliculas');
-});
+}); */
 
+Route::resource('peliculas', App\Http\Controllers\PeliculaController::class);{
+    return view('peliculasViews/dashPeliculas');
+};
