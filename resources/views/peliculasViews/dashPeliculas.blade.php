@@ -19,9 +19,18 @@
                             <div class="card" style="width: 18rem;">
                                 <img src="..." class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{$pelicula->titulo}}</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    <h3 class="card-title">{{$pelicula->titulo}}</h3>
+                                    <p class="card-text">
+                                        <ul>
+                                            <li>{{$pelicula->duracion}}</li>
+                                            <li>{{$pelicula->desc_gen}} </li>
+                                            <li>{{$pelicula->desc_idioma}}</li>
+                                            <li>{{$pelicula->nom}}</li>
+                                            <li>{{$pelicula->ap}}</li>
+                                            <li>{{$pelicula->am}}</li>
+                                        </ul>
+                                    </p>
+                                    
                                 </div>
                             </div>
                         </div>  
