@@ -159,7 +159,7 @@ Route::get("dashPeliculas", function () {
 Route::resource('peliculas', App\Http\Controllers\PeliculaController::class);{
     return view('peliculasViews/dashPeliculas');
 };
->>>>>>> 2e7f771874fc2e2bef374c4e16d69ba041cd60a6
+//>>>>>>> 2e7f771874fc2e2bef374c4e16d69ba041cd60a6
 
 Route::get("dashAsignaC", function () {
     return view('asigna_cartelera/dashAsignaC');
