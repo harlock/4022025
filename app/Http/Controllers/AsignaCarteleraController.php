@@ -12,17 +12,24 @@ class AsignaCarteleraController extends Controller
      */
     public function index()
     {
-        return view('asigna_cartelera.index', [
-            'asignaciones' => AsignaCartelera::all()
-        ]);
+        return view('asigna_cartelera.dashAsignaC');
+
     }
+
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return view('asigna_cartelera.create');
+        // Aquí puedes pasar los datos necesarios al formulario, como las películas, cines, días, horas y proyecciones
+        return view('asigna_cartelera.create', [
+            'peliculas' => Pelicula::all(),
+            'cines' => Cine::all(),
+            'dias' => Dia::all(),
+            'horas' => Hora::all(),
+            'proyecciones' => Proyeccion::all()
+        ]);
     }
 
     /**
@@ -40,7 +47,10 @@ class AsignaCarteleraController extends Controller
             'ff' => 'required|date',
         ]));
 
-        return redirect()->route('asigna_cartelera.index');
+        AsignaCartelera::create($validatedData);
+
+        // Redirigir a alguna página después de guardar
+        return redirect()->route('asigna_cartelera.index')->with('success', 'Cartelera asignada exitosamente');
     }
 
     /**

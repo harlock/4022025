@@ -65,6 +65,7 @@
                     <li class="nav-item"><a class="nav-link" href="#">Especiales</a></li>
                 </ul>
 
+<<<<<<< HEAD
                 <!-- Menú derecho -->
                 <form class="d-flex me-2">
                     <select class="form-select me-2">
@@ -90,6 +91,35 @@
                     @endauth
                     @endif</button>
             </div>
+=======
+        <!-- Menú derecho -->
+        <form class="d-flex me-2">
+          <select class="form-select me-2">
+            <option selected>Perisur</option>
+            <option>Centro</option>
+            <option>Santa Fe</option>
+            <option>Universidad</option>
+            <option>Polanco</option>
+          </select>
+          <button class="btn btn-outline-light" type="submit">🔍</button>
+        </form>
+        <button class="btn btn-outline-light">👤</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sección  -->
+  <div class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <!-- Imagen -->
+        <div class="col-md-6 text-center mb-4 mb-md-0">
+          <img src="img/mine.jpg" alt="Poster" class="movie-image">
+          <p class="text-light mt-3">MINECRAFT</p>
+          <p class="text-light mt-3">SOLO EN CINES</p>
+          <a href="#" class="btn btn-outline-light">COMPRAR TUS BOLETOS AQUÍ</a>
+>>>>>>> 5d65fd22b9d1acdb3516e9fda4ca09bc0254c9d2
         </div>
     </nav>
 

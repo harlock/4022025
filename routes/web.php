@@ -142,14 +142,36 @@ Route::get("charbel", function () {
 });
 
 
+/*Route::get("dashPeliculas", function () {
+
+
 Route::get('cines', function () {
     return view('cines');
 });
 
 Route::get("dashPeliculas", function () {
+<<<<<<< HEAD
     return view('peliculasViews/dashPeliculas');
 });
 
 Route::get("dashAsignaC", function () {
     return view('asigna_cartelera/dashAsignaC');
 });
+=======
+
+   return view('peliculasViews/dashPeliculas');
+<<<<<<< HEAD
+})->name('peliculas.dashPeliculas');
+=======
+}); */
+
+
+Route::resource('peliculas', App\Http\Controllers\PeliculaController::class);{
+    return view('peliculasViews/dashPeliculas');
+};
+//>>>>>>> 2e7f771874fc2e2bef374c4e16d69ba041cd60a6
+
+Route::get("dashAsignaC", function () {
+    return view('asigna_cartelera/dashAsignaC');
+ });
+>>>>>>> 5d65fd22b9d1acdb3516e9fda4ca09bc0254c9d2
