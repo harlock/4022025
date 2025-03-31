@@ -146,7 +146,7 @@ Route::get('cines', function () {
 
 Route::get("dashPeliculas", function () {
    return view('peliculasViews/dashPeliculas');
-});
+})->name('peliculas.dashPeliculas');
 
 Route::get("dashAsignaC", function () {
     return view('asigna_cartelera/dashAsignaC');
