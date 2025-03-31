@@ -69,6 +69,7 @@
             <option>Centro</option>
             <option>Santa Fe</option>
             <option>Universidad</option>
+            <option>Polanco</option>
           </select>
           <button class="btn btn-outline-light" type="submit">🔍</button>
         </form>
