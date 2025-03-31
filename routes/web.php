@@ -139,6 +139,11 @@ Route::get("charbel", function () {
     return view('charbel');
 });
 
+<<<<<<< HEAD
+Route::get('cines', function () {
+    return view('cines');
+});
+=======
 Route::get("dashPeliculas", function () {
    return view('peliculasViews/dashPeliculas');
 });
@@ -148,3 +153,4 @@ Route::get("dashAsignaC", function () {
  });
 
 
+>>>>>>> afb8947c57bbc4e67d5ff29143aa78aeb6dd3ce7
