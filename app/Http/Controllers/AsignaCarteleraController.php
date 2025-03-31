@@ -39,14 +39,14 @@ class AsignaCarteleraController extends Controller
             'fi' => 'required|date',
             'ff' => 'required|date',
         ]));
-        
+
         return redirect()->route('asigna_cartelera.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(AsignaCartelera $id)
     {
         return view('asigna_cartelera.show', ['asigna_cartelera' => $asigna_cartelera]);
     }
@@ -73,7 +73,7 @@ class AsignaCarteleraController extends Controller
             'fi' => 'required|date',
             'ff' => 'required|date',
         ]));
-        
+
         return redirect()->route('asigna_cartelera.index');
     }
 

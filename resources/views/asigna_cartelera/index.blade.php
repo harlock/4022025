@@ -1,9 +1,12 @@
-@extends('layouts.asigna_cartelera')
+@extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <h1>Lista de Asignaciones de Cartelera</h1>
-    <a href="{{ route('asigna_cartelera.create') }}" class="btn btn-success">Nueva Asignación</a>
+<div class="row justify-content-center">
+    <div class="col-8">
+    <h1 class="alert alert-success">Lista de Asignaciones de Cartelera</h1>
+    <a href="{{ route('asigna_cartelera.create') }}" class="btn btn-success"><i class="fa-solid fa-plus"></i>Nueva Asignación</a>
+    </div>
+</div>
     <table class="table mt-4">
         <thead>
             <tr>
@@ -30,11 +33,11 @@
                 <td>{{ $asignacion->fi }}</td>
                 <td>{{ $asignacion->ff }}</td>
                 <td>
-                    <a href="{{ route('asigna_cartelera.edit', $asignacion) }}" class="btn btn-warning">Editar</a>
+                    <a href="{{ route('asigna_cartelera.edit', $asignacion) }}" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i>Editar</a>
                     <form action="{{ route('asigna_cartelera.destroy', $asignacion) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                        <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i>Eliminar</button>
                     </form>
                 </td>
             </tr>
