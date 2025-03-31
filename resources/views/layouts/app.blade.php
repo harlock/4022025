@@ -72,9 +72,13 @@
                                 <a class="nav-link" href="{{ route('horas.index') }}">{{ __('horas') }}</a>
                             </li>
                         
-                        
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('personas.index') }}">{{ __('personas') }}</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link " href="{{route('protagonistas.index') }}">{{ __('protagonistas') }}</a>
+                            
                         </li>
                         
                                   
