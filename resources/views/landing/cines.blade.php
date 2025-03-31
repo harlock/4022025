@@ -85,6 +85,7 @@
         <!-- Imagen -->
         <div class="col-md-6 text-center mb-4 mb-md-0">
           <img src="img/mine.jpg" alt="Poster" class="movie-image">
+          <p class="text-light mt-3">MINECRAFT</p>
           <p class="text-light mt-3">SOLO EN CINES</p>
           <a href="#" class="btn btn-outline-light">COMPRAR TUS BOLETOS AQUÍ</a>
         </div>
