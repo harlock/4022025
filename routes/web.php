@@ -30,6 +30,10 @@ Route::resource('horas', App\Http\Controllers\HoraController::class);
 Route::resource('protagonistas', App\Http\Controllers\ProtagonistasController::class);
 Route::resource('personas', App\Http\Controllers\PersonasController::class);
 
+Route::resource('proyecciones', App\Http\Controllers\ProyeccionController::class);
+
+Route::resource('asigna_cartelera', App\Http\Controllers\AsignaCarteleraController::class);
+
 Route::get("cesar", function () {
     return view('cesar');
 });
@@ -134,4 +138,13 @@ Route::get("jesus", function () {
 Route::get("charbel", function () {
     return view('charbel');
 });
+
+Route::get("dashPeliculas", function () {
+   return view('peliculasViews/dashPeliculas');
+});
+
+Route::get("dashAsignaC", function () {
+    return view('asigna_cartelera/dashAsignaC');
+ });
+
 

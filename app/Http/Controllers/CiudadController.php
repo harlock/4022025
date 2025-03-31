@@ -34,7 +34,7 @@ class CiudadController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nombre_ci' => 'required|max:100',
+            'nombre_ci' => 'required|max:10',
         ],[],[
             'nombre_ci' => 'Nombre de la ciudad',
         ]);
@@ -66,7 +66,7 @@ class CiudadController extends Controller
     public function update(Request $request, Ciudad $ciudad)
     {
         $request->validate([
-            'nombre_ci' => 'required|max:100',
+            'nombre_ci' => 'required|max:10',
         ],[],[
             'nombre_ci' => 'Nombre de la ciudad',
         ]);

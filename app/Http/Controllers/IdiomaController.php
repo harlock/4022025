@@ -35,7 +35,7 @@ class IdiomaController extends Controller
             'desc_idioma' => 'descripcion de idioma',
         ]);
         Idioma::create($request->all());
-        return redirect()->route('idioma.index')->with('success', 'Idioma agregado correctamente.');
+        return redirect()->route('idioma.index')->with('success', 'idioma agregado correctamente.');
     }
 
     /**
@@ -43,7 +43,7 @@ class IdiomaController extends Controller
      */
     public function show(Idioma $idioma)
     {
-        
+
     }
 
     /**
@@ -59,8 +59,13 @@ class IdiomaController extends Controller
      */
     public function update(Request $request, Idioma $idioma)
     {
+        $request->validate([
+            'desc_idioma' => 'required|max:8',
+        ],[],[
+            'desc_idioma' => 'descripcion de idioma',
+        ]);
         $idioma->update($request->all());
-        return redirect()->route('idioma.index')->with('success', 'Idioma actualizado correctamente.');
+        return redirect()->route('idioma.index')->with('success', 'idioma actualizado correctamente.');
     }
 
     /**
@@ -69,6 +74,6 @@ class IdiomaController extends Controller
     public function destroy(Idioma $idioma)
     {
         $idioma->delete();
-        return redirect()->route('idioma.index')->with('success', 'Idioma eliminado correctamente.');
+        return redirect()->route('idioma.index')->with('success', 'idioma eliminado correctamente.');
     }
 }
