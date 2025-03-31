@@ -135,3 +135,6 @@ Route::get("charbel", function () {
     return view('charbel');
 });
 
+Route::get('cines', function () {
+    return view('cines');
+});
