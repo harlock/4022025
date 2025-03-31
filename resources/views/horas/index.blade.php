@@ -32,9 +32,15 @@
                     <tr>
                         <th scope="row">{{$loop->index+1}}</th>
                         <td>{{ $hora->descripcion_h }}</td>
+<<<<<<< HEAD
+                        <td>
+                            <a class="btn btn-warning" href="{{ route('horas.edit', $hora->id_hora) }}">Editar</a>
+                            <form action="{{ route('horas.destroy', $hora->id_hora) }}" method="POST" style="display:inline;">
+=======
                         <td>                           
                             <a class="btn btn-warning" href="{{ route('horas.edit', $hora->id_horas) }}">Editar</a>
                             <form action="{{ route('horas.destroy', $hora->id_horas) }}" method="POST" style="display:inline;">
+>>>>>>> 2ebb5e1ea0d270b98ff0d2742fa6e530f04330a3
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger" type="submit">Eliminar</button>
