@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('personas', function (Blueprint $table) {
+        Schema::create('horas', function (Blueprint $table) {
             $table->id('id_horas'); // Columna de ID
             $table->string('descripcion_h', 200); // Columna Nombre
             $table->softDeletes(); // Elimina suavemente

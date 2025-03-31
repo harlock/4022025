@@ -30,7 +30,7 @@
             @method('PUT')
             <div class="mb-3">
                 <label for="desc_idioma" class="form-label">Descripción del idioma</label>
-                <input type="text" class="form-control" id="desc_idioma" name="desc_idioma" value="{{ $idioma->desc_idioma }}">
+                <input type="text" class="form-control" id="desc_idioma" name="desc_idioma" value="{{old('desc_idioma') ,$idioma->desc_idioma }}">
             </div>
         
             <button type="submit" class="btn btn-primary">Actualizar</button>

@@ -3,8 +3,8 @@
 @section("content")
 <div class="row justify-content-center">
     <div class="col-8">
-        <h1 class="alert alert-success">Idiomas</h1>
-        <a href="{{route('idioma.create')}}" class="btn btn-success">Agregar Idioma</a>
+        <h1 class="alert alert-success">Proyecciones</h1>
+        <a href="{{route('proyecciones.create')}}" class="btn btn-success">Agregar Proyección</a>
     </div>
 </div>
 
@@ -22,18 +22,20 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Descripción del idioma</th>
+                <th>Descripción de la proyección</th>
+                <th>Precio</th>
                 <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($idiomas as $idioma)
+            @foreach($proyeccion as $proyeccion)
                 <tr>
                     <td>{{$loop->index+1}}</td>
-                    <td>{{ $idioma->desc_idioma }}</td>
+                    <td>{{ $proyeccion->des_proy }}</td>
+                    <td>{{ $proyeccion->precio }}</td>
                     <td>
-                        <a class="btn btn-warning" href="{{ route('idioma.edit', $idioma->id_idioma) }}">Editar</a>
-                        <form action="{{ route('idioma.destroy', $idioma->id_idioma) }}" method="POST" style="display:inline;">
+                        <a class="btn btn-warning" href="{{ route('proyecciones.edit', $proyeccion->id_proyeccion) }}">Editar</a>
+                        <form action="{{ route('proyecciones.destroy', $proyeccion->id_proyeccion) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger" type="submit">Eliminar</button>

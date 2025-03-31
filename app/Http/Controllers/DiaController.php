@@ -40,28 +40,31 @@ class DiaController extends Controller
     }
     
 
-    public function update(Request $request, $id_dia)
-    {
-        // Validar que 'desc_dia' sea único, excepto para el registro que estamos actualizando
+    public function update(Request $request, $id_proyeccion)
+{
+    try {
+        // Validar el campo 'desc_proy' y 'precio'
         $validated = $request->validate([
-            'desc_dia' => 'required|string|max:200|unique:dias,desc_dia,' . $id_dia . ',id_dia',
+            'desc_proy' => 'required|string|max:255|unique:proyecciones,desc_proy,' . $id_proyeccion . ',id_proyeccion',
+            'precio' => 'required|numeric', // Validación para precio
         ]);
-    
-        // Usar withTrashed para incluir registros eliminados lógicamente
-        $dia = Dia::withTrashed()->find($id_dia);
-    
-        if ($dia) {
-            // Actualizar el campo
-            $dia->desc_dia = $request->desc_dia;
-            $dia->save();
-    
-            // Redirigir con mensaje de éxito
-            return redirect()->route('dias.index')->with('success', 'Día actualizado correctamente');
-        } else {
-            // Si no se encuentra el registro
-            return redirect()->route('dias.index')->with('error', 'Día no encontrado');
-        }
+
+        // Buscar la proyección, incluyendo los eliminados lógicamente
+        $proyeccion = Proyeccion::withTrashed()->findOrFail($id_proyeccion);
+
+        // Actualizar los campos
+        $proyeccion->desc_proy = $request->desc_proy;
+        $proyeccion->precio = $request->precio;
+        $proyeccion->save();
+
+        // Redirigir con mensaje de éxito
+        return redirect()->route('proyecciones.index')->with('success', 'Proyección actualizada correctamente');
+    } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+        // Si no se encuentra el registro
+        return redirect()->route('proyecciones.index')->with('error', 'Proyección no encontrada');
     }
+}
+
     
 
     public function destroy($id_dia)
