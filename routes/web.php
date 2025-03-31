@@ -22,6 +22,8 @@ Route::resource('dias', App\Http\Controllers\DiaController::class);
 
 Route::resource('generos', App\Http\Controllers\GeneroController::class);
 
+Route::resource('directores', App\Http\Controllers\DirectorController::class);
+
 Route::resource('idioma', App\Http\Controllers\IdiomaController::class);
 
 Route::resource('clasificacion', App\Http\Controllers\ClasificacionController::class);
@@ -145,11 +147,9 @@ Route::get('cines', function () {
 });
 
 Route::get("dashPeliculas", function () {
-   return view('peliculasViews/dashPeliculas');
+    return view('peliculasViews/dashPeliculas');
 });
 
 Route::get("dashAsignaC", function () {
     return view('asigna_cartelera/dashAsignaC');
- });
-
-
+});
