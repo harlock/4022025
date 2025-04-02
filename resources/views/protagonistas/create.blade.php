@@ -21,12 +21,9 @@
             <form action="{{ route('protagonistas.store') }}" method="POST">
                 @csrf
                 <div class="mb-3">
-                    <label for="nombre" class="form-label">Nombre del protagonista</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" required>
-                    <label for="Apellido_Paterno" class="form-label">Apellido paterno</label>
-                    <input type="text" class="form-control" id="Apellido_Paterno" name="Apellido_Paterno" required>
-                    <label for="Apellido_Materno" class="form-label">Apellido materno</label>
-                    <input type="text" class="form-control" id="Apellido_Materno" name="Apellido_Materno" required>
+                    <label for="id_personas" class="form-label">identificador del protagonista</label>
+                    <input type="text" class="form-control" id="id_personas" name="id_personas" required>
+
 
                 </div>
 
