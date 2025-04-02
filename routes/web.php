@@ -174,4 +174,4 @@ Route::resource('peliculas', App\Http\Controllers\PeliculaController::class);{
 Route::get("dashAsignaC", function () {
     return view('asigna_cartelera/dashAsignaC');
  });
->>>>>>> 5d65fd22b9d1acdb3516e9fda4ca09bc0254c9d2
+//d65fd22b9d1acdb3516e9fda4ca09bc0254c9d2

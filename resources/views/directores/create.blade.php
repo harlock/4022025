@@ -1,38 +1,17 @@
-@extends('layouts.peliculas')
+@extends('layouts.app')
 
 @section('content')
-    <div class="row justify-content-center">
-        <div class="col-8">
-            <h1 class="alert alert-success">Agregar Director</h1>
-            <a href="{{route('director.index')}}" class="btn btn-primary">Regresar</a>
+<div class="container">
+    <h1>Agregar Director</h1>
+    <form action="{{ route('directores.store') }}" method="POST">
+        @csrf
+        <div class="form-group">
+            <label for="nombre_director">Nombre del Director</label>
+            <input type="text" class="form-control" id="nombre_director" name="nombre_director" required>
+            @error('nombre_director') <div class="text-danger">{{ $message }}</div> @enderror
         </div>
-    </div>
-
-    @if ($errors->any())
-        <div class="row justify-content-center">
-            <div class="col-4">
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
-        </div>
-    @endif
-
-    <div class="row justify-content-center mt-5">
-        <div class="col-6">
-            <form action="{{ route('director.store') }}" method="POST">
-                @csrf
-                <div class="mb-3">
-                    <label for="desc_idioma" class="form-label">Descripción del idioma</label>
-                    <input type="text" class="form-control" id="desc_idioma" name="desc_idioma" required>
-                </div>
-
-                <button type="submit" class="btn btn-primary">Guardar</button>
-            </form>
-        </div>
-    </div>
+        <button type="submit" class="btn btn-success mt-2">Guardar</button>
+        <a href="{{ route('directores.index') }}" class="btn btn-secondary mt-2">Cancelar</a>
+    </form>
+</div>
 @endsection
