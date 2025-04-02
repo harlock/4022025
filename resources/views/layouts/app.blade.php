@@ -54,26 +54,32 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('ciudad.index') }}">{{ __('Ciudades') }}</a>
                         </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('generos.index') }}">{{ __('Generos') }}</a>
                         </li>
-                        
                         <li class="nav-item">
-                             <a class="nav-link" href="{{ route('dias.index') }}">{{ __('Dias') }}</a>
+                            <a class="nav-link" href="{{ route('directores.index') }}">{{ __('Directores') }}</a>
                         </li>
-                         
+                        <li class="nva-item">
+                            <a class="nav-link" href="{{ route('cine.index') }}">{{ __('Cines')}}</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('dias.index') }}">{{ __('Dias') }}</a>
+                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('idioma.index') }}">{{ __('idioma') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('clasificacion.index') }}">{{ __('Clasificacion') }}</a>
                         </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('horas.index') }}">{{ __('horas') }}</a>
-                            </li> <li class="nav-item">
-                                <a class="nav-link " href="{{route('protagonistas.index') }}">{{ __('protagonistas') }}</a>
-                            </li>
-                            <li class="nav-item">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('horas.index') }}">{{ __('horas') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="{{route('protagonistas.index') }}">{{ __('protagonistas') }}</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('personas.index') }}">{{ __('personas') }}</a>
                         </li>
                         <li class="nav-item">
@@ -87,7 +93,7 @@
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
-                           
+
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();

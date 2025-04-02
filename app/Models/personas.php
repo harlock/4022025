@@ -4,14 +4,26 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-class personas extends Model
+
+class Persona extends Model
 {
     use SoftDeletes;
+
     protected $table = 'personas';
-    protected $primaryKey = 'id_personas';
+    protected $primaryKey = 'id_persona';
+    protected $fillable = ['nombre', 'ap', 'am'];
+    protected $dates = ['deleted_at'];
 
-    protected $fillable = ['Nombre','ap','am'];
-
-
-
+    /**
+     * Relación con el director (uno a uno)
+     */
+    public function director()
+    {
+        return $this->hasOne(Director::class, 'id_persona');
+    }
 }
+
+
+
+
+
