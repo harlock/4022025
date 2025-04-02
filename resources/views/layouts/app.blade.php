@@ -54,11 +54,13 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('ciudad.index') }}">{{ __('Ciudades') }}</a>
                         </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('generos.index') }}">{{ __('Generos') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('directores.index') }}">{{ __('Directores') }}</a>
+                        </li>
+                        <li class="nva-item">
+                            <a class="nav-link" href="{{ route('cine.index') }}">{{ __('Cines')}}</a>
                         </li>
 
                         <li class="nav-item">
