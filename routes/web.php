@@ -4,6 +4,8 @@ use App\Http\Controllers\CiudadController;
 use App\Http\Controllers\GeneroController;
 use App\Http\Controllers\IdiomaController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
 
 Route::get('/', function () {
     return view('landing/cines');
@@ -30,7 +32,9 @@ Route::resource('idioma', App\Http\Controllers\IdiomaController::class);
 Route::resource('clasificacion', App\Http\Controllers\ClasificacionController::class);
 
 Route::resource('horas', App\Http\Controllers\HoraController::class);
+
 Route::resource('protagonistas', App\Http\Controllers\ProtagonistasController::class);
+
 Route::resource('personas', App\Http\Controllers\PersonasController::class);
 
 Route::resource('proyecciones', App\Http\Controllers\ProyeccionController::class);
@@ -87,8 +91,6 @@ Route::get("jesusemiliano", function () {
 Route::get("imanol", function () {
     return view('imanol');
 });
-
-
 
 Route::get("ivonne", function () {
     return view('ivonne');
