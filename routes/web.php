@@ -36,6 +36,10 @@ Route::resource('proyecciones', App\Http\Controllers\ProyeccionController::class
 
 Route::resource('asigna_cartelera', App\Http\Controllers\AsignaCarteleraController::class);
 
+Route::resource('cine', App\Http\Controllers\CineController::class);
+
+
+
 Route::get("cesar", function () {
     return view('cesar');
 });
@@ -142,7 +146,7 @@ Route::get("charbel", function () {
 });
 
 
-/*Route::get("dashPeliculas", function () {
+Route::get("dashPeliculas", function () {
 
 
 Route::get('cines', function () {
@@ -150,28 +154,31 @@ Route::get('cines', function () {
 });
 
 Route::get("dashPeliculas", function () {
-<<<<<<< HEAD
     return view('peliculasViews/dashPeliculas');
 });
 
 Route::get("dashAsignaC", function () {
     return view('asigna_cartelera/dashAsignaC');
 });
-=======
+
 
    return view('peliculasViews/dashPeliculas');
-<<<<<<< HEAD
+
 })->name('peliculas.dashPeliculas');
-=======
-}); */
 
 
-Route::resource('peliculas', App\Http\Controllers\PeliculaController::class);{
+
+
+Route::resource('peliculas', App\Http\Controllers\PeliculaController::class); {
     return view('peliculasViews/dashPeliculas');
 };
-//>>>>>>> 2e7f771874fc2e2bef374c4e16d69ba041cd60a6
+
 
 Route::get("dashAsignaC", function () {
     return view('asigna_cartelera/dashAsignaC');
+<<<<<<< HEAD
  });
 //d65fd22b9d1acdb3516e9fda4ca09bc0254c9d2
+=======
+});
+>>>>>>> 335ba1f4d98d755e53df0bb7a6a4f7ef476a5ed4

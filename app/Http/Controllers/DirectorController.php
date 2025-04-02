@@ -11,11 +11,16 @@ class DirectorController extends Controller
         return view('directores.index', compact('directores'));
     }
 
+<<<<<<< HEAD
+=======
+    // Muestra el formulario de creación
+>>>>>>> 335ba1f4d98d755e53df0bb7a6a4f7ef476a5ed4
     public function create()
     {
         return view('directores.create');
     }
 
+<<<<<<< HEAD
     public function store(Request $request)
     {
         $request->validate([
@@ -55,6 +60,22 @@ class DirectorController extends Controller
         $directore->delete();
         return redirect()->route('directores.index')
             ->with('success', 'Director eliminado correctamente.');
+=======
+    // Guarda un nuevo género en la base de datos
+    public function store(Request $request)
+    {
+        // Validación de datos
+        $request->validate([
+            'nombre_director' => 'required|string|max:100'
+        ]);
+
+        // Creación del género
+        Director::create([
+            'nombre_director' => $request->nombre_director
+        ]);
+
+        return redirect()->route('directores.index')->with('success', 'Director creado correctamente');
+>>>>>>> 335ba1f4d98d755e53df0bb7a6a4f7ef476a5ed4
     }
 }
 
