@@ -3,7 +3,7 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="col-8">
-            <h1 class="alert alert-success">Agregar hroas</h1>
+            <h1 class="alert alert-success">Agregar horas</h1>
             <a href="{{route('horas.index')}}" class="btn btn-primary">Regresar</a>
         </div>  
     </div>  

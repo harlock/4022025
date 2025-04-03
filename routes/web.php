@@ -164,11 +164,8 @@ Route::get("dashPeliculas", function () {
 
 
 Route::get("dashAsignaC", function () {
-<<<<<<< HEAD
-    return view('asigna_cartelera/dashAsignaC');});
 
+    return view('asigna_cartelera/dashAsignaC');
 
-=======
     return view('asigna_cartelera.dashAsignaC');
 });
->>>>>>> 8466165d04228bb0533c6e6cc3bbc89ba5ab743a
