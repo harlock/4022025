@@ -21,10 +21,11 @@
 <main class="container-fluid bg-light">
     <div class="row min-vh-100">
         <div class="col-2 d-flex flex-column align-items-center bg-dark text-white p-3">
-            <img src="{{asset('img/perfil.png')}}" class="rounded-circle w-50 mb-3" alt="logo">
+        <a href="{{ route('home') }}" class="d-flex justify-content-center text-decoration-none text-dark">
+            <img src="{{ asset('img/perfil.png') }}" class="rounded-circle w-50 mb-3" alt="logo">
 
             <h4 class="fw-bold text-center"></h4>
-
+        </a>
             <ul class="nav flex-column w-100 mt-3">
                 <li class="nav-item py-2 {{ Request::is('dashPeliculas') ? 'bg-primary rounded' : '' }}"><a href="{{ asset('dashPeliculas') }}" class="text-decoration-none fw-bold text-white  align-items-center gap-4 d-flex"><i class="fa-solid fa-film ms-4"></i>Peliculas</a></li>
                 <li class="nav-item py-2 {{ Request::is('clasificacion*') ? 'bg-primary rounded' : '' }}"><a href="{{ route('clasificacion.index') }}" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-clapperboard ms-4"></i>Clasificacion</a></li>

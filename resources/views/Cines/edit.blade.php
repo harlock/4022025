@@ -1,5 +1,5 @@
 {{-- resources/views/cines/edit.blade.php --}}
-@extends('layouts.app')
+@extends('layouts.asigna_cartelera')
 
 @section('content')
     <h1>Editar Cine</h1>

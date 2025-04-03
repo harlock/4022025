@@ -13,6 +13,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/dashPeliculas', [DashPeliculasController::class, 'index'])->name('peliculasViews.dashPeliculas');
 
 
 Route::resource('ciudad', App\Http\Controllers\CiudadController::class);
@@ -38,7 +39,7 @@ Route::resource('asigna_cartelera', App\Http\Controllers\AsignaCarteleraControll
 
 Route::resource('cine', App\Http\Controllers\CineController::class);
 
-
+Route::resource('peliculas', App\Http\Controllers\PeliculaController::class);
 
 Route::get("cesar", function () {
     return view('cesar');
@@ -145,35 +146,21 @@ Route::get("charbel", function () {
     return view('charbel');
 });
 
-
-Route::get("dashPeliculas", function () {
-
-
 Route::get('cines', function () {
     return view('cines');
 });
 
+
+Route::get("dashAsignaC", function () {
+    return view('asigna_cartelera.dashAsignaC');
+});
+
 Route::get("dashPeliculas", function () {
-    return view('peliculasViews/dashPeliculas');
-});
+   return view('peliculasViews.dashPeliculas');
 
-Route::get("dashAsignaC", function () {
-    return view('asigna_cartelera/dashAsignaC');
-});
-
-
-   return view('peliculasViews/dashPeliculas');
-
-})->name('peliculas.dashPeliculas');
-
-
-
-
-Route::resource('peliculas', App\Http\Controllers\PeliculaController::class); {
-    return view('peliculasViews/dashPeliculas');
-};
+})->name('peliculasViews.dashPeliculas');
 
 
 Route::get("dashAsignaC", function () {
-    return view('asigna_cartelera/dashAsignaC');
+    return view('asigna_cartelera.dashAsignaC');
 });

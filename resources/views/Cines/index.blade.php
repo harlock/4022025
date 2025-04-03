@@ -1,5 +1,5 @@
 {{-- resources/views/cines/index.blade.php --}}
-@extends('layouts.app')
+@extends('layouts.asigna_cartelera')
 
 @section('content')
     <h1>Cines</h1>
@@ -23,7 +23,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($cines as $cine)
+            @foreach($cine as $cine)
             <tr>
                 <td>{{ $cine->id_cine }}</td>
                 <td>{{ $cine->nombre_c }}</td>
