@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\protagonistas;
+use App\Models\Protagonistas;
 use Illuminate\Http\Request;
 
 class ProtagonistasController extends Controller
@@ -12,8 +12,16 @@ class ProtagonistasController extends Controller
      */
     public function index()
     {
-        $protagonistas = protagonistas::all();
+
+
+        $protagonistas = Protagonistas::join('personas', 'personas.id_personas', '=', 'protagonistas.id_personas')
+            ->select('personas.nombre', 'personas.ap', 'personas.am', 'protagonistas.id_protagonista')
+            ->take(2)
+            ->get();
+
         return view('protagonistas.index', compact('protagonistas'));
+
+
     }
 
     /**
@@ -22,6 +30,7 @@ class ProtagonistasController extends Controller
     public function create()
     {
         return view('protagonistas.create');
+
     }
 
     /**
@@ -29,15 +38,7 @@ class ProtagonistasController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'nombre' => 'required|max:10',
-            'Apellido_Paterno' => 'required|max:10',
-            'Apellido_Materno' => 'required|max:10',
-        ],[],[
-            'nombre' => 'Nombre',
-            'Apellido_Paterno' => 'Apellido Paterno',
-            'Apellido_Materno' => 'Apellido Materno',
-        ]);
+
         protagonistas::create($request->all());
         return redirect()->route('protagonistas.index')->with('success', 'protagonistas agregada correctamente');
     }

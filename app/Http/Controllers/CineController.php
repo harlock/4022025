@@ -9,8 +9,8 @@ class CineController extends Controller
 {
     public function index()
     {
-        $cines = Cine::all();
-        return view('cines.index', compact('cines'));
+        $cine = Cine::all();
+        return view('cines.index', compact('cine'));
     }
 
     public function create()

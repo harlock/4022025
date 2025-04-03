@@ -26,8 +26,8 @@
             <h4 class="fw-bold text-center">Asignaciones</h4>
 
             <ul class="nav flex-column w-100 mt-3">
-                <li class="nav-item py-2 {{ Request::is('asigna_cartelera') ? 'bg-primary rounded' : '' }}">
-                    <a href="{{ route('asigna_cartelera.show') }}" class="text-decoration-none fw-bold text-white d-flex align-items-center gap-4">
+                <li class="nav-item py-2 {{ Request::is('asigna_cartelera*') ? 'bg-primary rounded' : '' }}">
+                    <a href="{{ route('asigna_cartelera.index') }}" class="text-decoration-none fw-bold text-white d-flex align-items-center gap-4">
                         <i class="fa-solid fa-ticket ms-4"></i> Asigna Cartelera
                     </a>
                 </li>
@@ -47,12 +47,12 @@
                     </a>
                 </li>
                 <li class="nav-item py-2 {{ Request::is('cines*') ? 'bg-primary rounded' : '' }}">
-                    <a href="{{ route('personas.index') }}" class="text-decoration-none fw-bold text-white d-flex align-items-center gap-4">
+                    <a href="{{ route('cine.index') }}" class="text-decoration-none fw-bold text-white d-flex align-items-center gap-4">
                         <i class="fa-solid fa-building ms-4"></i> Cines
                     </a>
                 </li>
                 <li class="nav-item py-2 {{ Request::is('peliculas*') ? 'bg-primary rounded' : '' }}">
-                    <a href="{{ route('peliculas.dashPeliculas') }}" class="text-decoration-none fw-bold text-white d-flex align-items-center gap-4">
+                    <a href="{{ route('peliculasViews.dashPeliculas') }}" class="text-decoration-none fw-bold text-white d-flex align-items-center gap-4">
                         <i class="fa-solid fa-film ms-4"></i> Películas
                     </a>
                 </li>
