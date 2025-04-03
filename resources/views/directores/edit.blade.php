@@ -1,29 +1,32 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <h1>Editar Director</h1>
+<div class="container mt-4">
+    <h2>Editar Director</h2>
 
-    <form action="{{ route('directores.update', $directore) }}" method="POST">
+    @if($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+    <form action="{{ route('directores.update', $director->id_director) }}" method="POST">
         @csrf
         @method('PUT')
 
-        <div class="form-group">
-            <label for="nombre_director">Nombre del Director</label>
-            <input 
-                type="text" 
-                class="form-control" 
-                id="nombre_director" 
-                name="nombre_director" 
-                value="{{ old('nombre_director', $directore->nombre_director) }}" 
-                required>
-            @error('nombre_director')
-                <div class="text-danger">{{ $message }}</div>
-            @enderror
+        <div class="mb-3">
+            <label for="nombre_director" class="form-label">Nombre del Director</label>
+            <input type="text" class="form-control" id="nombre_director" name="nombre_director" value="{{ old('nombre_director', $director->nombre_director) }}" required>
         </div>
 
-        <button type="submit" class="btn btn-primary mt-2">Actualizar</button>
-        <a href="{{ route('directores.index') }}" class="btn btn-secondary mt-2">Cancelar</a>
-    </form>
-</div>
-@endsection
+        <button type="submit" class="btn btn-success">Actualizar Director</button>
+       
+
+
+
+
+

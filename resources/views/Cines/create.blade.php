@@ -1,5 +1,5 @@
 {{-- resources/views/cines/create.blade.php --}}
-@extends('layouts.app')
+@extends('layouts.asigna_cartelera')
 
 @section('content')
     <h1>Agregar Cine</h1>
