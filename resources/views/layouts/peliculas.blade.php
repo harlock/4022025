@@ -31,6 +31,8 @@
                 <li class="nav-item py-2 {{ Request::is('genero*') ? 'bg-primary rounded' : '' }}"><a href="{{ route('generos.index') }}" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-users ms-4"></i> Generos</a></li>
                 <li class="nav-item py-2 {{ Request::is('idioma*') ? 'bg-primary rounded' : '' }}"><a href="{{ route('idioma.index') }}" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-language ms-4"></i> Idiomas</a></li>
                 <li class="nav-item py-2 {{ Request::is('director*') ? 'bg-primary rounded' : '' }}"><a href="#" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-cloud ms-4"></i>Directores</a></li>
+                <li class="nav-item py-2 {{ Request::is('personas*') ? 'bg-primary rounded' : '' }}"><a href="{{ route('personas.index') }}" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-user-plus ms-4"></i> Personas</a></li>
+                <li class="nav-item py-2 {{ Request::is('protagonistas*') ? 'bg-primary rounded' : '' }}"><a href="{{ route('protagonistas.index') }}" class="text-decoration-none fw-bold text-white align-items-center gap-4 d-flex"><i class="fa-solid fa-user ms-4"></i> Protagonistas</a></li>
             </ul>
 
             <div class="mt-auto">
