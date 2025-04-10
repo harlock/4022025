@@ -29,7 +29,7 @@ class PeliculaController extends Controller
      */
     public function create()
     {
-        //
+        return view('peliculas.create');
     }
 
     /**
@@ -37,7 +37,8 @@ class PeliculaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Pelicula::create($request->all());
+        return redirect()->route('peliculas.index')->with('success', 'imagen agregada correctamente.');
     }
 
     /**
