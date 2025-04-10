@@ -16,10 +16,11 @@
                     
                     @foreach($peliculas as $pelicula)
                         <div class="col-md-4">
-                            <div class="card" style="width: 18rem;">
-                                <img src="..." class="card-img-top" alt="...">
+                            <div class="card mb-3" >
+                                <img src="..." class="card-img-top" alt="imagen">
                                 <div class="card-body">
                                     <h3 class="card-title">{{$pelicula->titulo}}</h3>
+
                                     <p class="card-text">
                                         <ul>
                                             <li>{{$pelicula->duracion}}</li>
@@ -30,13 +31,10 @@
                                             <li>{{$pelicula->am}}</li>
                                         </ul>
                                     </p>
-                                    
                                 </div>
                             </div>
                         </div>  
                     @endforeach
-                    
-                    
                 </div>
 
                 <!-- Tabla de últimos movimientos -->
@@ -139,6 +137,13 @@
                     <button class="btn  w-100 my-2 bg-white text-dark">Generar boletos</button>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-8 justify-content-center text-center">
+            <h1 class="">Imagenes</h1>
+            <a href="{{route('peliculas.create')}}" class="btn btn-success">Agregar Imagen</a>
         </div>
     </div>
 @endsection

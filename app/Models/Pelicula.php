@@ -14,6 +14,6 @@ class Pelicula extends Model
 
     protected $table = 'peliculas';
     protected $primaryKey = 'id_pelicula';
-    protected $fillable = ['titulo','id_clasificacion','id_genero','id_idioma','id_director','duracion'];
+    protected $fillable = ['titulo','id_clasificacion','id_genero','id_idioma','id_director','duracion','imagen'];
 
 }
