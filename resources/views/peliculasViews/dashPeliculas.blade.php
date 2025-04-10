@@ -1,4 +1,5 @@
 @extends('layouts.peliculas')
+
 @section('content')
     
     <div class="container-fluid bg-light">
@@ -13,7 +14,7 @@
                 
 
                 <div class="row mt-4">
-                    
+                @if(isset($peliculas) && $peliculas->count() > 0)
                     @foreach($peliculas as $pelicula)
                         <div class="col-md-4">
                             <div class="card mb-3" >
@@ -35,7 +36,7 @@
                             </div>
                         </div>  
                     @endforeach
-                </div>
+
 
                 <!-- Tabla de últimos movimientos -->
                 <div class="row mt-4">

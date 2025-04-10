@@ -4,6 +4,8 @@ use App\Http\Controllers\CiudadController;
 use App\Http\Controllers\GeneroController;
 use App\Http\Controllers\IdiomaController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
 
 Route::get('/', function () {
     return view('landing/cines');
@@ -13,6 +15,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/dashPeliculas', [DashPeliculasController::class, 'index'])->name('peliculasViews.dashPeliculas');
 
 
 Route::resource('ciudad', App\Http\Controllers\CiudadController::class);
@@ -22,17 +25,25 @@ Route::resource('dias', App\Http\Controllers\DiaController::class);
 
 Route::resource('generos', App\Http\Controllers\GeneroController::class);
 
+Route::resource('directores', App\Http\Controllers\DirectorController::class);
+
 Route::resource('idioma', App\Http\Controllers\IdiomaController::class);
 
 Route::resource('clasificacion', App\Http\Controllers\ClasificacionController::class);
 
 Route::resource('horas', App\Http\Controllers\HoraController::class);
+
 Route::resource('protagonistas', App\Http\Controllers\ProtagonistasController::class);
+
 Route::resource('personas', App\Http\Controllers\PersonasController::class);
 
 Route::resource('proyecciones', App\Http\Controllers\ProyeccionController::class);
 
 Route::resource('asigna_cartelera', App\Http\Controllers\AsignaCarteleraController::class);
+
+Route::resource('cine', App\Http\Controllers\CineController::class);
+
+Route::resource('peliculas', App\Http\Controllers\PeliculaController::class);
 
 Route::get("cesar", function () {
     return view('cesar');
@@ -80,8 +91,6 @@ Route::get("jesusemiliano", function () {
 Route::get("imanol", function () {
     return view('imanol');
 });
-
-
 
 Route::get("ivonne", function () {
     return view('ivonne');
@@ -139,28 +148,24 @@ Route::get("charbel", function () {
     return view('charbel');
 });
 
-
-/*Route::get("dashPeliculas", function () {
-
-
 Route::get('cines', function () {
     return view('cines');
 });
 
-Route::get("dashPeliculas", function () {
-
-   return view('peliculasViews/dashPeliculas');
-<<<<<<< HEAD
-})->name('peliculas.dashPeliculas');
-=======
-}); */
-
-
-Route::resource('peliculas', App\Http\Controllers\PeliculaController::class);{
-    return view('peliculasViews/dashPeliculas');
-};
-//>>>>>>> 2e7f771874fc2e2bef374c4e16d69ba041cd60a6
 
 Route::get("dashAsignaC", function () {
+    return view('asigna_cartelera.dashAsignaC');
+});
+
+Route::get("dashPeliculas", function () {
+   return view('peliculasViews.dashPeliculas');
+
+})->name('peliculasViews.dashPeliculas');
+
+
+Route::get("dashAsignaC", function () {
+
     return view('asigna_cartelera/dashAsignaC');
- });
+
+    return view('asigna_cartelera.dashAsignaC');
+});

@@ -12,17 +12,17 @@ class PeliculaController extends Controller
      */
     public function index()
     {
-        $peliculas = Pelicula::join('clasificacion','clasificacion.id_clasificacion','=','peliculas.id_clasificacion')
-            ->join('genero','genero.id_genero','=','peliculas.id_genero')
-            ->join('idioma','idioma.id_idioma','=','peliculas.id_idioma')
-            ->join('directores','directores.id_director','=','peliculas.id_director')
-            ->join('personas','personas.id_persona','=','directores.id_persona')
+        $peliculas = Pelicula::join('clasificacion', 'clasificacion.id_clasificacion', '=', 'peliculas.id_clasificacion')
+            ->join('generos', 'generos.id_genero', '=', 'peliculas.id_genero')
+            ->join('idioma', 'idioma.id_idioma', '=', 'peliculas.id_idioma')
+            ->join('directores', 'directores.id_director', '=', 'peliculas.id_director')
+            ->join('personas', 'personas.id_personas', '=', 'directores.id_personas') // Corregido el campo id_personas
+            ->select('peliculas.*', 'generos.desc_gen', 'idioma.desc_idioma', 'personas.Nombre', 'personas.ap', 'personas.am')
             ->get();
-        //dd($peliculas);
 
-        return view('peliculasViews/dashPeliculas',compact('peliculas'));
-
+        return view('peliculasViews.dashPeliculas', compact('peliculas'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -44,7 +44,7 @@ class PeliculaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Pelicula $pelicula)
+    public function show(Pelicula $peliculas)
     {
         //
     }
@@ -52,7 +52,7 @@ class PeliculaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Pelicula $pelicula)
+    public function edit(Pelicula $peliculas)
     {
         //
     }
@@ -60,7 +60,7 @@ class PeliculaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Pelicula $pelicula)
+    public function update(Request $request, Pelicula $peliculas)
     {
         //
     }
@@ -68,7 +68,7 @@ class PeliculaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Pelicula $pelicula)
+    public function destroy(Pelicula $peliculas)
     {
         //
     }
