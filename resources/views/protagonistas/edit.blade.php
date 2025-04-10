@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.peliculas')
 
 @section('content')
     <div class="row justify-content-center">
@@ -23,12 +23,8 @@
                 @csrf
                 @method('PUT')
                 <div class="mb-3">
-                    <label for="nombre" class="form-label">Nombre del protagonista</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" value="{{ $protagonista->nombre }}" required>
-                    <label for="Apellido_Paterno" class="form-label">Apellido paterno</label>
-                    <input type="text" class="form-control" id="Apellido_Paterno" name="Apellido_Paterno" value="{{ $protagonista->Apellido_Paterno }}" required>
-                    <label for="Apellido_Materno" class="form-label">Apellido materno</label>
-                    <input type="text" class="form-control" id="Apellido_Materno" name="Apellido_Materno" value="{{ $protagonista->Apellido_Materno }}" required>
+                    <label for="id_personas" class="form-label">Nombre del protagonista</label>
+                    <input type="text" class="form-control" id="id_personas" name="id_personas" value="{{ $protagonista->id_personas }}" required>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Actualizar</button>

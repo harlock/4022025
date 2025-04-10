@@ -57,7 +57,6 @@ class CiudadController extends Controller
     public function edit(Ciudad $ciudad)
     {
         return view("ciudades.edit",compact('ciudad'));
-
     }
 
     /**

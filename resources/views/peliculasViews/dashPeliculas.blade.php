@@ -1,4 +1,5 @@
 @extends('layouts.peliculas')
+
 @section('content')
     
     <div class="container-fluid bg-light">
@@ -10,85 +11,32 @@
                     <input type="text" class="form-control w-25" placeholder="Buscar ...">
                 </div>
 
-                <div class="row mt-4">
-                    <div class="col-md-4">
-                        <div class="card text-white bg-dark p-4 ">
-                            <h5 class="fw-bold" >Ciudades.</h5>
-                                <ul>
-                                    <li>Guadalajara.</li>
-                                    <li>Cdmx.</li>
-                                    <li>Guanajuato.</li>
-                                    <li>Oaxaca.</li>
-                                    <li>Veracruz.</li>
-                                </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4">
-                        <div class="card text-white bg-dark p-4">
-                            <h5 class="fw-bold" >Dias de servicio</h5>
-                            <h6>De 7:00am a 11:00pm</h6>
-                                <ul>
-                                    <li>Lunes.</li>
-                                    <li>Martes.</li>
-                                    <li>Miercoles.</li>
-                                    <li>Jueves.</li>
-                                    <li>Viernes.</li>
-                                </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card text-white bg-dark p-4">
-                            <h5 class="fw-bold" >Idiomas</h5>
-                                <ul>
-                                    <li>Español(Latinoamerica).</li>
-                                    <li>Ingles(Sub ES).</li>
-                                </ul>
-                        </div>
-                    </div>
-                </div>
+                
 
                 <div class="row mt-4">
-                    <div class="col-md-4">
-                        <div class="card p-3 text-white bg-dark">
-                            <h5 class="fw-bold" >Generos</h5>
-                            <ul>
-                                <li>Terror.</li>
-                                <li>Belico</li>
-                                <li>Accion</li>
-                                <li>Ciencia ficcion</li>
-                                <li>Suspenso</li>
-                                <li>Romance</li>
-                                <li>Drama</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card p-3 text-white bg-dark">
-                            <h5 class="fw-bold" >Clacificacion</h5>
-                            <ul>
-                                <li>AA: Comprensible para menores de 7 años</li>
-                                <li>A: Para todo público</li>
-                                <li>B: Para adolescentes de 12 años en adelante</li>
-                                <li>B15: No recomendada para menores de 15 años</li>
-                                <li>C: Para adultos de 18 años en adelante</li>
-                                <li>D: Películas para adultos</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card p-3 text-white bg-dark">
-                            <h5 class="fw-bold" >Horarios</h5>
-                            <ul>
-                                <li>7:00am a 10:00am</li>
-                                <li>10:30am a 1:00pm</li>
-                                <li>1:30pm a 4:00pm</li>
-                                <li>5:00pm a 8:00pm</li>
-                                <li>8:00pm a 11:00pm</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                @if(isset($peliculas) && $peliculas->count() > 0)
+                    @foreach($peliculas as $pelicula)
+                        <div class="col-md-4">
+                            <div class="card mb-3" >
+                                <img src="..." class="card-img-top" alt="imagen">
+                                <div class="card-body">
+                                    <h3 class="card-title">{{$pelicula->titulo}}</h3>
+
+                                    <p class="card-text">
+                                        <ul>
+                                            <li>{{$pelicula->duracion}}</li>
+                                            <li>{{$pelicula->desc_gen}} </li>
+                                            <li>{{$pelicula->desc_idioma}}</li>
+                                            <li>{{$pelicula->nom}}</li>
+                                            <li>{{$pelicula->ap}}</li>
+                                            <li>{{$pelicula->am}}</li>
+                                        </ul>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>  
+                    @endforeach
+
 
                 <!-- Tabla de últimos movimientos -->
                 <div class="row mt-4">
@@ -155,7 +103,7 @@
             </div>
 
             <!-- Tercera Columna -->
-            <div class="col-3 p-4 bg-light">
+            <div class="col p-4 bg-light">
                 <div class="card p-3 text-center bg-secondary text-white">
                     <h5 class="fw-bold" >Capacidad de los cines</h5>
                     <div class="progress">
@@ -190,6 +138,13 @@
                     <button class="btn  w-100 my-2 bg-white text-dark">Generar boletos</button>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-8 justify-content-center text-center">
+            <h1 class="">Imagenes</h1>
+            <a href="{{route('peliculas.create')}}" class="btn btn-success">Agregar Imagen</a>
         </div>
     </div>
 @endsection

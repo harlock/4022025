@@ -1,10 +1,10 @@
-@extends("layouts.app")
+@extends("layouts.peliculas")
 
 @section("content")
     <div class="row justify-content-center">
         <div class="col-8">
             <h1 class="alert alert-success">Protagonistas</h1>
-            <a href="{{route('protagonistas.create')}}" class="btn btn-success">Agregar un protagonista</a>
+            <a href="{{ route('protagonistas.create') }}" class="btn btn-success">Agregar un protagonista</a>
         </div>
     </div>
 
@@ -31,10 +31,10 @@
                 <tbody>
                 @foreach($protagonistas as $protagonista)
                     <tr>
-                        <td>{{$loop->index+1}}</td>
+                        <td>{{ $loop->index + 1 }}</td>
                         <td>{{ $protagonista->nombre }}</td>
-                        <td>{{ $protagonista->Apellido_Paterno }}</td>
-                        <td>{{ $protagonista->Apellido_Materno }}</td>
+                        <td>{{ $protagonista->ap }}</td>
+                        <td>{{ $protagonista->am }}</td>
 
                         <td>
                             <a class="btn btn-warning" href="{{ route('protagonistas.edit', $protagonista->id_protagonista) }}">Editar</a>
