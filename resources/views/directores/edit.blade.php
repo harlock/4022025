@@ -1,17 +1,17 @@
-@extends('layouts.app')
+@extends('layouts.peliculas')
 
 @section('content')
 <div class="container mt-4">
     <h2>Editar Director</h2>
 
     @if($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
+    <div class="alert alert-danger">
+        <ul>
+            @foreach($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
     @endif
 
     <form action="{{ route('directores.update', $director->id_director) }}" method="POST">
@@ -24,9 +24,3 @@
         </div>
 
         <button type="submit" class="btn btn-success">Actualizar Director</button>
-       
-
-
-
-
-

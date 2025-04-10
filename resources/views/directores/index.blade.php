@@ -1,13 +1,13 @@
-@extends('layouts.app')
+@extends('layouts.peliculas')
 
 @section('content')
 <div class="container mt-4">
     <h2 class="mb-4">Listado de Directores</h2>
 
     @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
     @endif
 
     <a href="{{ route('directores.create') }}" class="btn btn-primary mb-3">Añadir nuevo director</a>
