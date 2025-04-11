@@ -25,7 +25,7 @@ Route::resource('dias', App\Http\Controllers\DiaController::class);
 
 Route::resource('generos', App\Http\Controllers\GeneroController::class);
 
-Route::resource('directores', App\Http\Controllers\DirectorController::class);
+Route::resource('director', App\Http\Controllers\DirectorController::class);
 
 Route::resource('idioma', App\Http\Controllers\IdiomaController::class);
 
@@ -158,8 +158,7 @@ Route::get("dashAsignaC", function () {
 });
 
 Route::get("dashPeliculas", function () {
-   return view('peliculasViews.dashPeliculas');
-
+    return view('peliculasViews.dashPeliculas');
 })->name('peliculasViews.dashPeliculas');
 
 

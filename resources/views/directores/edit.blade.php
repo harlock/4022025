@@ -1,26 +1,46 @@
 @extends('layouts.peliculas')
 
 @section('content')
-<div class="container mt-4">
-    <h2>Editar Director</h2>
-
-    @if($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach($errors->all() as $error)
-            <li>{{ $error }}</li>
-            @endforeach
-        </ul>
+<div class="row justify-content-center">
+    <div class="col-8">
+        <h1 class="alert alert-success">Editar Director</h1>
     </div>
-    @endif
-
-    <form action="{{ route('directores.update', $director->id_director) }}" method="POST">
-        @csrf
-        @method('PUT')
-
-        <div class="mb-3">
-            <label for="nombre_director" class="form-label">Nombre del Director</label>
-            <input type="text" class="form-control" id="nombre_director" name="nombre_director" value="{{ old('nombre_director', $director->nombre_director) }}" required>
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <a href="{{route('director.index')}}" class="btn btn-primary">Regresar</a>
         </div>
+    </div>
 
-        <button type="submit" class="btn btn-success">Actualizar Director</button>
+</div>
+@if ($errors->any())
+<div class="row justify-content-center">
+    <div class="col-4">
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    </div>
+</div>
+@endif
+
+
+<div class="row justify-content-center mt-5">
+    <div class="col-6">
+        <form action="{{ route('director.update',$director->id_director) }}" method="POST">
+            @csrf
+            @method("PUT")
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre del director</label>
+
+                <input type="text" class="form-control" id="nombre" name="nombre_director" aria-describedby="emailHelp" value="{{$director->nombre_director}}">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+
+    </div>
+</div>
+@endsection
